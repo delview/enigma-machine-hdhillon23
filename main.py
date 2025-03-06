@@ -1,10 +1,12 @@
 # Enigma Machine with Phone Characters
 
-# Greet the user and ask for their name
-
-# Explain the program
+# Greet the user and ask for their name and explain the program
+user_name = input("What is your name before we get this program started?")
+print(f"Greetings {user_name}! This is an engima machine program\
+ that converts phone number characters into letters!")
 
 # Ask the user if they want to encrypt or decrypt
+choice = input(f"{user_name} would you like to encrypt or decrypt a message")
 
 # Encrypt function
 
