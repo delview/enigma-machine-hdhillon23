@@ -30,11 +30,10 @@ while True:
             message = input("Invalid input. Please enter a message containing numbers and spaces only: ").strip()
         decrypted_message = decrypt_message(message)
         print(f"Decrypted message: {decrypted_message}")
-        
-    # Ask the user if they want to play again [y/n]
 
-    # If "y" restart the program
-
-    # If "n" stop/end the program
-
-    # Say goodbye
+    # Ask the user if they want to play again (y/n)
+    play_again = input("Do you want to encrypt or decrypt another message? (y/n): ").strip().lower()
+    if play_again !='y':
+        print(f"Thanks for playing {user_name}, goodbye! Hope to see you again soon!") # said goodbye if user chooses 'n' to stop using the program
+        break
+    
