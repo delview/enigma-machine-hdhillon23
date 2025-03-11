@@ -7,7 +7,7 @@
 # Greet the user and ask for their name and explain the program
 user_name = input("What is your name before we get this program started?")
 print(f"Greetings {user_name}! This is an engima machine program\
- that converts phone number characters into letters!")
+ that converts phone number characters into letters!\n")
 
 while True:
     # Ask the user if they want to encrypt or decrypt
@@ -20,15 +20,17 @@ while True:
         message = input("Enter the message you want to encrypt (Type letters and spaces only): ").strip()
         while not all(char.isalpha() or char.isspace() for char in message):
             message = input("Invalid input. Please enter a message containing letters and spaces only: ").strip()
-            encrypted_mssage = encrypt_message(message)
-            print(f"Encrypted message: {encrypt_message}")
-
-    # Print the encrypted message
-
+            encrypted_message = encrypt_message(message)
+            print(f"Encrypted message: {encrypted_message}\n")
+    
     # Decrypt the message
-
-    # Print the encrypted message
-
+    elif choice == 'd':
+        message = input("Enter the message you want to decrypt (Type numbers only): ").strip()
+        while not all(char.isdigit() or char.isspace() for char in message):
+            message = input("Invalid input. Please enter a message containing numbers and spaces only: ").strip()
+        decrypted_message = decrypt_message(message)
+        print(f"Decrypted message: {decrypted_message}")
+        
     # Ask the user if they want to play again [y/n]
 
     # If "y" restart the program
