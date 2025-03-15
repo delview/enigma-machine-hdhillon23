@@ -11,8 +11,11 @@ def encrypt_message(message):
      'P': '7', 'Q': '77', 'R': '777', 'S': '7777',
      'T': '8', 'U': '88', 'V': '888',
      'W': '9', 'X': '99', 'Y': '999', 'Z': '9999',
-
     }
+
+    # Fixing the variable name typo and the join statement
+    encrypted_text = ''.join(phone_dict[char.upper()] for char in message if char.upper() in phone_dict)
+    return encrypted_text
 
 # Function to decrypt a message back to text
 def decrypt_message(encrypted_text):
