@@ -31,6 +31,8 @@ def decrypt_message(encrypted_text):
 
     }
 
+    # Decrypt logic needs improvement depending on input
+    return ''.join(reverse_dict.get(chunk, '?') for chunk in encrypted_text.split())
 
 # Greet the user and ask for their name and explain the program
 user_name = input("What is your name before we get this program started?")
