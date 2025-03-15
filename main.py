@@ -50,14 +50,14 @@ while True:
         message = input("Enter the message you want to encrypt (Type letters and spaces only): ").strip()
         while not all(char.isalpha() or char.isspace() for char in message):
             message = input("Invalid input. Please enter a message containing letters and spaces only: ").strip()
-            encrypted_message = encrypt_message(message)
-            print(f"Encrypted message: {encrypted_message}\n")
+        encrypted_message = encrypt_message(message)
+        print(f"Encrypted message: {encrypted_message}\n")
     
     # Decrypt the message
     elif choice == 'd':
-        message = input("Enter the message you want to decrypt (Type numbers only): ").strip()
-        while not all(char.isdigit() or char.isspace() for char in message):
-            message = input("Invalid input. Please enter a message containing numbers and spaces only: ").strip()
+        encrypted_text = input("Enter the message you want to decrypt (Type numbers only): ").strip()
+        while not all(char.isdigit() or char.isspace() for char in encrypted_text):
+            encrypted_text = input("Invalid input. Please enter a message containing numbers and spaces only: ").strip()
         decrypted_message = decrypt_message(message)
         print(f"Decrypted message: {decrypted_message}")
 
