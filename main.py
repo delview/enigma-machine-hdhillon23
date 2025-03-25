@@ -27,7 +27,7 @@ def decrypt_message(encrypted_text):
      '3': 'D', '33': 'E', '333': 'F',
      '4': 'G', '44': 'H', '444': 'I',
      '5': 'J', '55': 'K', '555': 'L',
-     '6': 'M', '66': 'M', '666': 'O',
+     '6': 'M', '66': 'N', '666': 'O',
      '7': 'P', '77': 'Q', '777': 'R', '7777': 'S',
      '8': 'T', '88': 'U', '888': 'V',
      '9': 'W', '99': 'X', '999': 'Y', '9999': 'Z',
@@ -35,7 +35,21 @@ def decrypt_message(encrypted_text):
     }
 
     # Split the input encrypted_text into chunks and map each chunk to its corresponding letter
-    return ''.join(reverse_dict.get(chunk, '?') for chunk in encrypted_text.split())
+    # Handle spaces to correctly break down the text
+    words = encrypted_text.split(' ') # Split the encrypted text into individual words seperated by woords
+    decrypted_message = []
+    
+    for word in words: # Go through each word in the list
+        chunks = []
+        chunk = '' # Create an empty string to gather characters for matching
+        for char in word: # Go through each character in the current word
+            chunk += char # Add the character to the temporary chunk
+            if chunk in reverse_dict:
+                chunks.append(reverse_dict[chunk]) # Convert the chunk to a letter and add it to the list
+                chunk = '' # Reset chunk after matching
+        decrypted_message.append(''.join(chunks)) # Combine the letters into a full word and add it to the list
+
+    return ' '.join(decrypted_message) # Combine all the words into a single string with spaces and return it
 
 # Greet the user and ask for their name and explain the program
 user_name = input("What is your name before we get this program started? ").strip() # Strip spaces from the user's input
